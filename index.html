@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VALENTINE TRAP 😈💘</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff9a9e,
+    #ff9a9e 25px,
+    #fad0c4 25px,
+    #fad0c4 50px
+  );
+  font-family: 'Comic Sans MS', 'Arial Black', cursive;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  margin-top: 60px;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 3.2em;
+  font-weight: 900;
+  color: white;
+  text-shadow: 5px 5px #ff004c;
+}
+
+h2 {
+  font-size: 2.4em;
+  font-weight: 800;
+  color: #fff;
+}
+
+p {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: white;
+}
+
+button {
+  padding: 18px 30px;
+  margin: 12px;
+  border: 4px dashed white;
+  border-radius: 40px;
+  font-size: 1.3em;
+  font-weight: 900;
+  cursor: pointer;
+  background: #ff3366;
+  color: white;
+  transform: rotate(-1deg);
+}
+
+button:hover {
+  transform: scale(1.15) rotate(2deg);
+  background: #ff0044;
+}
+
+.hidden {
+  display: none;
+}
+
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 30px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+.big-love {
+  font-size: 4.5em;
+  font-weight: 900;
+  color: yellow;
+  text-shadow: 6px 6px red;
+  animation: shake 0.3s infinite alternate;
+}
+
+@keyframes shake {
+  from { transform: rotate(-3deg); }
+  to { transform: rotate(3deg); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="step1">
+  <h1>🚨 EMERGENCY 🚨</h1>
+  <h1>MR SUJAL GUPTHA 😳💌</h1>
+  <h1>WILL YOU BE MY VALENTINE??? 💖💖💖</h1>
+  <p>⏳ YOU HAVE 5 SECONDS.</p>
+</div>
+
+<div class="container hidden" id="punishment">
+  <h1>😈 TOO SLOW 😈</h1>
+  <h2>Taking time has its own consequences</h2>
+  <p>NOT FOLLOWING RULES CAN TAKE YOUR LIFE 💀</p>
+  <button onclick="furry()">🦊 Become a furry (WHY)</button>
+  <button onclick="retry()">🔁 OK OK I’LL ANSWER</button>
+</div>
+
+<div class="container hidden" id="finalQuestion">
+  <h1>LAST CHANCE 😤</h1>
+  <h1>MR SUJAL GUPTHA 💘</h1>
+  <h1>WILL. YOU. BE. MY. VALENTINE. 😈❤️</h1>
+  <button onclick="yesClicked()">YES 😭💕</button>
+</div>
+
+<div class="container hidden" id="activities">
+  <h1>😏 NOW DECIDE 😏</h1>
+  <h2>WHAT ARE WE DOING TODAY???</h2>
+
+  <button>☕ Coffee date like adults</button>
+  <button>📱 FaceTime and stare</button>
+  <button>📞 Just call and yap</button>
+  <button>🔥 Spicy 😈 (SUS)</button>
+
+  <br><br>
+  <button onclick="finalLove()">CONTINUE 💘</button>
+</div>
+
+<div class="container hidden" id="ending">
+  <div class="big-love">I LOVE YOU SO MUCH 💖💖💖</div>
+  <p>
+    👉😍 
+    <a href="https://photos.app.goo.gl/xpSHC9gHGXAoQPBn6"
+       target="_blank"
+       style="color:yellow; font-size:1.5em; font-weight:bold;">
+      CHECK OUT MY FAV PICTURE OF YOU 📸💘
+    </a>
+  </p>
+</div>
+
+<script>
+let timer = setTimeout(() => {
+  step1.classList.add("hidden");
+  punishment.classList.remove("hidden");
+}, 5000);
+
+function furry() {
+  alert("WHY WOULD YOU CLICK THIS 😭");
+}
+
+function retry() {
+  punishment.classList.add("hidden");
+  finalQuestion.classList.remove("hidden");
+}
+
+function yesClicked() {
+  finalQuestion.classList.add("hidden");
+  activities.classList.remove("hidden");
+}
+
+function finalLove() {
+  activities.classList.add("hidden");
+  ending.classList.remove("hidden");
+  heartRain();
+}
+
+function heartRain() {
+  setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 2 + 2) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }, 100);
+}
+</script>
+
+</body>
+</html>
